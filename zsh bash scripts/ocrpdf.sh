@@ -23,6 +23,9 @@ echo "add is $add"
 outputName=${dirName}/${inputBaseName}${add}
 echo "outputName is $outputName"
 
+# Send a dialog box to the user to tell them it's working
+osascript -e 'display dialog "I am working on it, gimme a sec!"'
+
 # Run ocrmypdf on the original input file name, set the output to pdf and save to the new inputName with -OG and .pdf
 # As I'm going to use this shell script inside a Keyboard Maestro macro, I have to specify the full path (KBM doesn't know the path)
 
