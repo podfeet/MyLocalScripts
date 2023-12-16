@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>523</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>shouldAppend</key>
+					<dict/>
+					<key>textToAdd</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>Purpose &amp; Use of this Macro
+
+Upon selection of a PDF file in the Finder, this macro will run a Bash shell script that OCRs the file and saves it out with the suffix "-OCR" in the same directory. OCR is performed by the library ocrmypdf installed by homebrew.  Ensure that Automator has full disk access in System Settings, and you will be asked to give python access to your files.
+
+If the script finds that the selected PDF is already OCRd, it will redo it. The last command starts with:
+	ocrmypdf --redo-ocr
+
+If you'd prefer to force the OCR which rasterizes all vector content and then runs OCR change it to:
+	ocrmypdf --force-ocr  If you'd rather the script just skip performing OCR on any pages that contain text, change it to:
+	ocrmypdf --redo-ocr</string>
+						</array>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Set Spotlight Comments for Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>shouldAppend</key>
+					<false/>
+					<key>textToAdd</key>
+					<string>Purpose &amp; Use of this Macro
+
+Upon selection of a PDF file in the Finder, this macro will run a Bash shell script that OCRs the file and saves it out with the suffix "-OCR" in the same directory. OCR is performed by the library ocrmypdf installed by homebrew.  Ensure that Automator has full disk access in System Settings, and you will be asked to give python access to your files.
+
+If the script finds that the selected PDF is already OCRd, it will redo it. The last command starts with:
+	ocrmypdf --redo-ocr
+
+If you'd prefer to force the OCR which rasterizes all vector content and then runs OCR change it to:
+	ocrmypdf --force-ocr  If you'd rather the script just skip performing OCR on any pages that contain text, change it to:
+	ocrmypdf --redo-ocr</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.AddFinderComments</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMAddFinderCommentsAction</string>
+				<key>InputUUID</key>
+				<string>0184A691-3870-439E-89BD-98D4CEFB8229</string>
+				<key>Keywords</key>
+				<array>
+					<string>Add</string>
+					<string>Comment</string>
+					<string>File</string>
+					<string>Folder</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>90E1C3A5-DC2E-4A90-AC7D-CB5F6DAC8B69</string>
+				<key>UUID</key>
+				<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<true/>
+						<key>name</key>
+						<string>shouldAppend</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>textToAdd</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>301.500000:403.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>shouldAppend</key>
+					<dict/>
+					<key>textToAdd</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>*** REQUIREMENTS &amp; SETUP ***
+This macro requires the open source library ocrmypdf installed by Homebrew.
+
+	1.	If you don’t already have it, install Homebrew: Go to https://brew.sh, copy the command they tell you to copy using the little copy button. Open Terminal and hit Enter. Ignore the glop that flies by on your screen
+	2.	Install OCRmyPDF: In Terminal type brew install ocrmypdf. Ignore the even more voluminous pile of glop that will fly by on your screen
+	3.	Also in Terminal, type echo $PATH and copy the result. It will look this /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local but probably even longer
+	4.	In Keyboard Maestro, open Settings → Variables and use the plus button to create a variable called ENV_PATH and paste in the PATH you just copied. This step is required for Keyboard Maestro to know where ocrmypdf is installed
+	5.	We need to verify that Keyboard Maestro has full disk access since it will be writing a file. Open System Settings → Privacy &amp; Security → Full Disk Access. If you don’t see Keyboard Maestro in the list, hit the plus button at the bottom, add Keyboard Maestro, and toggle it on.
+	6.	By default, Keyboard Maestro disables downloaded macros on import as a security precaution. Right-click on this macro and select “Enable macro”
+	7.	Create a new folder and give it any name you like, and in the far right pane change “Do not display in menu bar” to “Display in menu bar”
+	8.	Drag this macro into the new folder
+	9.	If you already have a folder of macros set to “Display in menu bar” you can use that one instead of creating a new one.</string>
+						</array>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Set Spotlight Comments for Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>shouldAppend</key>
+					<true/>
+					<key>textToAdd</key>
+					<string>*** REQUIREMENTS &amp; SETUP ***
+This macro requires the open source library ocrmypdf installed by Homebrew.
+
+	1.	If you don’t already have it, install Homebrew: Go to https://brew.sh, copy the command they tell you to copy using the little copy button. Open Terminal and hit Enter. Ignore the glop that flies by on your screen
+	2.	Install OCRmyPDF: In Terminal type brew install ocrmypdf. Ignore the even more voluminous pile of glop that will fly by on your screen
+	3.	Also in Terminal, type echo $PATH and copy the result. It will look this /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local but probably even longer
+	4.	In Keyboard Maestro, open Settings → Variables and use the plus button to create a variable called ENV_PATH and paste in the PATH you just copied. This step is required for Keyboard Maestro to know where ocrmypdf is installed
+	5.	We need to verify that Keyboard Maestro has full disk access since it will be writing a file. Open System Settings → Privacy &amp; Security → Full Disk Access. If you don’t see Keyboard Maestro in the list, hit the plus button at the bottom, add Keyboard Maestro, and toggle it on.
+	6.	By default, Keyboard Maestro disables downloaded macros on import as a security precaution. Right-click on this macro and select “Enable macro”
+	7.	Create a new folder and give it any name you like, and in the far right pane change “Do not display in menu bar” to “Display in menu bar”
+	8.	Drag this macro into the new folder
+	9.	If you already have a folder of macros set to “Display in menu bar” you can use that one instead of creating a new one.</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.AddFinderComments</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMAddFinderCommentsAction</string>
+				<key>InputUUID</key>
+				<string>633D1B18-4B85-4036-9C8C-06C6B42EAE93</string>
+				<key>Keywords</key>
+				<array>
+					<string>Add</string>
+					<string>Comment</string>
+					<string>File</string>
+					<string>Folder</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>6811C74A-8D41-4C37-8957-6FE7254F1E1F</string>
+				<key>UUID</key>
+				<string>E1720D99-E438-412A-A18A-D88A38E84C6D</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<true/>
+						<key>name</key>
+						<string>shouldAppend</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>textToAdd</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>301.500000:683.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/bin/bash
+
+# A small script designed to take an input file of a PDF, run it through the library ocrmypdf, and send the resulting OCR'd file to the same name with the extension "-OCR.pdf" on the end
+
+# now=$(date +"%T")
+# echo "$now" &gt; ~/Desktop/error.log
+# echo "$now" &gt;&gt; ~/Desktop/debug.log
+# echo "$1" &gt; ~/Desktop/debug.log
+
+# assign a variable name to the input file including extension and path
+
+inputName="$1"
+# echo "inputName is $inputName" &gt;&gt; ~/Desktop/debug.log
+
+# assign a variable to the path where my homebrew apps live
+
+homebrewPath=/opt/homebrew/bin
+
+# put the path into a variable
+
+dirName=$(dirname "$inputName")
+# echo "dirName is $dirName" &gt;&gt; ~/Desktop/debug.log
+
+# Strip the path and file extension and assign to a variable
+
+inputBaseName=$(basename "$inputName" .pdf)
+# echo "inputBaseName is $inputBaseName" &gt;&gt; ~/Desktop/debug.log
+
+# Create a variable to add the text "-OCR" and the file extension .pdf
+add="-OCR.pdf"
+# echo "add is $add" &gt;&gt; ~/Desktop/debug.log
+
+# Create a variable for the output file name that concatenates the base name of the input and adds -0CR and the file extension .pdf
+
+outputName="${dirName}/${inputBaseName}${add}"
+# echo "outputName is $outputName" &gt;&gt; ~/Desktop/debug.log
+
+# Send a dialog box to the user to tell them it's working
+osascript -e 'display dialog "If this is a large file it may take a while 🕰️"'
+
+# Required for Automator to know where ocrmypdf's dependencies are, such as tesseract
+export PATH=/opt/homebrew/bin:$PATH
+
+# Run ocrmypdf on the original input file name, if it finds OCR redo it, set the output to pdf and save to the new inputName with -OG and .pdf
+/opt/homebrew/bin/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>1</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>FBD66658-3759-4F01-ACDB-641BCF36BFDE</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>A17DDB0A-4B28-4E75-A661-F702D348330E</string>
+				<key>UUID</key>
+				<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>301.500000:1355.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>0B2EB6B7-0E17-489B-A65E-7275E7A7E39F</key>
+		<dict>
+			<key>from</key>
+			<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F - 777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
+			<key>to</key>
+			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
+		</dict>
+		<key>1AA3B721-A47F-422D-B8B1-B2C7FC3425F2</key>
+		<dict>
+			<key>from</key>
+			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
+			<key>to</key>
+			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleIDsByPath</key>
+		<dict/>
+		<key>applicationPaths</key>
+		<array/>
+		<key>backgroundColor</key>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGpCwwXGBki
+		KCkwVSRudWxs1Q0ODxAREhMUFRZWJGNsYXNzW05TQ29sb3JOYW1lXE5TQ29s
+		b3JTcGFjZV1OU0NhdGFsb2dOYW1lV05TQ29sb3KACIADEAaAAoAEVlN5c3Rl
+		bV8QD3N5c3RlbVBpbmtDb2xvctUaGw8cDR0eHyASXE5TQ29tcG9uZW50c1VO
+		U1JHQl8QEk5TQ3VzdG9tQ29sb3JTcGFjZUcxIDAgMCAxTxAdMC45ODU5NTQx
+		NjU1IDAgMC4wMjY5NDAwMDg2MwAQAYAFgAjTIyQNJSYnVE5TSURVTlNJQ0MQ
+		B4AGgAdPEQxIAAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAA
+		YWNzcE1TRlQAAAAASUVDIHNSR0IAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1I
+		UCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtw
+		dAAAAgQAAAAUclhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAU
+		ZG1uZAAAAlQAAABwZG1kZAAAAsQAAACIdnVlZAAAA0wAAACGdmlldwAAA9QA
+		AAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAMclRSQwAA
+		BDwAAAgMZ1RSQwAABDwAAAgMYlRSQwAABDwAAAgMdGV4dAAAAABDb3B5cmln
+		aHQgKGMpIDE5OTggSGV3bGV0dC1QYWNrYXJkIENvbXBhbnkAAGRlc2MAAAAA
+		AAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAASc1JHQiBJRUM2MTk2
+		Ni0yLjEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAAAAAAAAAA
+		AAAAAABYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABja
+		WFlaIAAAAAAAACSgAAAPhAAAts9kZXNjAAAAAAAAABZJRUMgaHR0cDovL3d3
+		dy5pZWMuY2gAAAAAAAAAAAAAABZJRUMgaHR0cDovL3d3dy5pZWMuY2gAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGVz
+		YwAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0IFJHQiBjb2xvdXIgc3Bh
+		Y2UgLSBzUkdCAAAAAAAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0IFJH
+		QiBjb2xvdXIgc3BhY2UgLSBzUkdCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRl
+		c2MAAAAAAAAALFJlZmVyZW5jZSBWaWV3aW5nIENvbmRpdGlvbiBpbiBJRUM2
+		MTk2Ni0yLjEAAAAAAAAAAAAAACxSZWZlcmVuY2UgVmlld2luZyBDb25kaXRp
+		b24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2
+		aWV3AAAAAAATpP4AFF8uABDPFAAD7cwABBMLAANcngAAAAFYWVogAAAAAABM
+		CVYAUAAAAFcf521lYXMAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAKPAAAA
+		AnNpZyAAAAAAQ1JUIGN1cnYAAAAAAAAEAAAAAAUACgAPABQAGQAeACMAKAAt
+		ADIANwA7AEAARQBKAE8AVABZAF4AYwBoAG0AcgB3AHwAgQCGAIsAkACVAJoA
+		nwCkAKkArgCyALcAvADBAMYAywDQANUA2wDgAOUA6wDwAPYA+wEBAQcBDQET
+		ARkBHwElASsBMgE4AT4BRQFMAVIBWQFgAWcBbgF1AXwBgwGLAZIBmgGhAakB
+		sQG5AcEByQHRAdkB4QHpAfIB+gIDAgwCFAIdAiYCLwI4AkECSwJUAl0CZwJx
+		AnoChAKOApgCogKsArYCwQLLAtUC4ALrAvUDAAMLAxYDIQMtAzgDQwNPA1oD
+		ZgNyA34DigOWA6IDrgO6A8cD0wPgA+wD+QQGBBMEIAQtBDsESARVBGMEcQR+
+		BIwEmgSoBLYExATTBOEE8AT+BQ0FHAUrBToFSQVYBWcFdwWGBZYFpgW1BcUF
+		1QXlBfYGBgYWBicGNwZIBlkGagZ7BowGnQavBsAG0QbjBvUHBwcZBysHPQdP
+		B2EHdAeGB5kHrAe/B9IH5Qf4CAsIHwgyCEYIWghuCIIIlgiqCL4I0gjnCPsJ
+		EAklCToJTwlkCXkJjwmkCboJzwnlCfsKEQonCj0KVApqCoEKmAquCsUK3Arz
+		CwsLIgs5C1ELaQuAC5gLsAvIC+EL+QwSDCoMQwxcDHUMjgynDMAM2QzzDQ0N
+		Jg1ADVoNdA2ODakNww3eDfgOEw4uDkkOZA5/DpsOtg7SDu4PCQ8lD0EPXg96
+		D5YPsw/PD+wQCRAmEEMQYRB+EJsQuRDXEPURExExEU8RbRGMEaoRyRHoEgcS
+		JhJFEmQShBKjEsMS4xMDEyMTQxNjE4MTpBPFE+UUBhQnFEkUahSLFK0UzhTw
+		FRIVNBVWFXgVmxW9FeAWAxYmFkkWbBaPFrIW1hb6Fx0XQRdlF4kXrhfSF/cY
+		GxhAGGUYihivGNUY+hkgGUUZaxmRGbcZ3RoEGioaURp3Gp4axRrsGxQbOxtj
+		G4obshvaHAIcKhxSHHscoxzMHPUdHh1HHXAdmR3DHeweFh5AHmoelB6+Hukf
+		Ex8+H2kflB+/H+ogFSBBIGwgmCDEIPAhHCFIIXUhoSHOIfsiJyJVIoIiryLd
+		IwojOCNmI5QjwiPwJB8kTSR8JKsk2iUJJTglaCWXJccl9yYnJlcmhya3Jugn
+		GCdJJ3onqyfcKA0oPyhxKKIo1CkGKTgpaymdKdAqAio1KmgqmyrPKwIrNitp
+		K50r0SwFLDksbiyiLNctDC1BLXYtqy3hLhYuTC6CLrcu7i8kL1ovkS/HL/4w
+		NTBsMKQw2zESMUoxgjG6MfIyKjJjMpsy1DMNM0YzfzO4M/E0KzRlNJ402DUT
+		NU01hzXCNf02NzZyNq426TckN2A3nDfXOBQ4UDiMOMg5BTlCOX85vDn5OjY6
+		dDqyOu87LTtrO6o76DwnPGU8pDzjPSI9YT2hPeA+ID5gPqA+4D8hP2E/oj/i
+		QCNAZECmQOdBKUFqQaxB7kIwQnJCtUL3QzpDfUPARANER0SKRM5FEkVVRZpF
+		3kYiRmdGq0bwRzVHe0fASAVIS0iRSNdJHUljSalJ8Eo3Sn1KxEsMS1NLmkvi
+		TCpMcky6TQJNSk2TTdxOJU5uTrdPAE9JT5NP3VAnUHFQu1EGUVBRm1HmUjFS
+		fFLHUxNTX1OqU/ZUQlSPVNtVKFV1VcJWD1ZcVqlW91dEV5JX4FgvWH1Yy1ka
+		WWlZuFoHWlZaplr1W0VblVvlXDVchlzWXSddeF3JXhpebF69Xw9fYV+zYAVg
+		V2CqYPxhT2GiYfViSWKcYvBjQ2OXY+tkQGSUZOllPWWSZedmPWaSZuhnPWeT
+		Z+loP2iWaOxpQ2maafFqSGqfavdrT2una/9sV2yvbQhtYG25bhJua27Ebx5v
+		eG/RcCtwhnDgcTpxlXHwcktypnMBc11zuHQUdHB0zHUodYV14XY+dpt2+HdW
+		d7N4EXhueMx5KnmJeed6RnqlewR7Y3vCfCF8gXzhfUF9oX4BfmJ+wn8jf4R/
+		5YBHgKiBCoFrgc2CMIKSgvSDV4O6hB2EgITjhUeFq4YOhnKG14c7h5+IBIhp
+		iM6JM4mZif6KZIrKizCLlov8jGOMyo0xjZiN/45mjs6PNo+ekAaQbpDWkT+R
+		qJIRknqS45NNk7aUIJSKlPSVX5XJljSWn5cKl3WX4JhMmLiZJJmQmfyaaJrV
+		m0Kbr5wcnImc951kndKeQJ6unx2fi5/6oGmg2KFHobaiJqKWowajdqPmpFak
+		x6U4pammGqaLpv2nbqfgqFKoxKk3qamqHKqPqwKrdavprFys0K1ErbiuLa6h
+		rxavi7AAsHWw6rFgsdayS7LCszizrrQltJy1E7WKtgG2ebbwt2i34LhZuNG5
+		SrnCuju6tbsuu6e8IbybvRW9j74KvoS+/796v/XAcMDswWfB48JfwtvDWMPU
+		xFHEzsVLxcjGRsbDx0HHv8g9yLzJOsm5yjjKt8s2y7bMNcy1zTXNtc42zrbP
+		N8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp2
+		2vvbgNwF3IrdEN2W3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5HPk/OWE5g3m
+		lucf56noMui86Ubp0Opb6uXrcOv77IbtEe2c7ijutO9A78zwWPDl8XLx//KM
+		8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9uv5L/tz/
+		bf//0iorLC1aJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiLi9c
+		TlNDb2xvclNwYWNlWE5TT2JqZWN00iorMTJXTlNDb2xvcqIxLwAIABEAGgAk
+		ACkAMgA3AEkATABRAFMAXQBjAG4AdQCBAI4AnACkAKYAqACqAKwArgC1AMcA
+		0gDfAOUA+gECASIBJAEmASgBLwE0AToBPAE+AUANjA2RDZwNpQ2yDbUNwg3L
+		DdAN2AAAAAAAAAIBAAAAAAAAADMAAAAAAAAAAAAAAAAAAA3b
+		</data>
+		<key>backgroundColorName</key>
+		<string>systemPinkColor</string>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject.PDF</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>presentationMode</key>
+		<integer>15</integer>
+		<key>processesInput</key>
+		<false/>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject.PDF</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<false/>
+		<key>systemImageName</key>
+		<string>NSTouchBarDocuments</string>
+		<key>useAutomaticInputType</key>
+		<false/>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
