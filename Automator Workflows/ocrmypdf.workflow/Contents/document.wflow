@@ -144,8 +144,6 @@ If you'd prefer to force the OCR which rasterizes all vector content and then ru
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
@@ -188,15 +186,16 @@ If you'd prefer to force the OCR which rasterizes all vector content and then ru
 							<string>*** REQUIREMENTS &amp; SETUP ***
 This macro requires the open source library ocrmypdf installed by Homebrew.
 
-	1.	If you don’t already have it, install Homebrew: Go to https://brew.sh, copy the command they tell you to copy using the little copy button. Open Terminal and hit Enter. Ignore the glop that flies by on your screen
-	2.	Install OCRmyPDF: In Terminal type brew install ocrmypdf. Ignore the even more voluminous pile of glop that will fly by on your screen
-	3.	Also in Terminal, type echo $PATH and copy the result. It will look this /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local but probably even longer
-	4.	In Keyboard Maestro, open Settings → Variables and use the plus button to create a variable called ENV_PATH and paste in the PATH you just copied. This step is required for Keyboard Maestro to know where ocrmypdf is installed
-	5.	We need to verify that Keyboard Maestro has full disk access since it will be writing a file. Open System Settings → Privacy &amp; Security → Full Disk Access. If you don’t see Keyboard Maestro in the list, hit the plus button at the bottom, add Keyboard Maestro, and toggle it on.
-	6.	By default, Keyboard Maestro disables downloaded macros on import as a security precaution. Right-click on this macro and select “Enable macro”
-	7.	Create a new folder and give it any name you like, and in the far right pane change “Do not display in menu bar” to “Display in menu bar”
-	8.	Drag this macro into the new folder
-	9.	If you already have a folder of macros set to “Display in menu bar” you can use that one instead of creating a new one.</string>
+1. If you don’t already have it, install Homebrew:
+	Go to https://brew.sh
+	copy the command they tell you to copy using the little copy button. 
+	Open Terminal and hit Enter. Ignore the glop that flies by on your screen
+
+2. Install OCRmyPDF: 
+	In Terminal type:
+		brew install ocrmypdf
+	Ignore the even more voluminous pile of glop that will fly by on your screen
+3. Quit Terminal</string>
 						</array>
 					</dict>
 				</dict>
@@ -223,15 +222,16 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 					<string>*** REQUIREMENTS &amp; SETUP ***
 This macro requires the open source library ocrmypdf installed by Homebrew.
 
-	1.	If you don’t already have it, install Homebrew: Go to https://brew.sh, copy the command they tell you to copy using the little copy button. Open Terminal and hit Enter. Ignore the glop that flies by on your screen
-	2.	Install OCRmyPDF: In Terminal type brew install ocrmypdf. Ignore the even more voluminous pile of glop that will fly by on your screen
-	3.	Also in Terminal, type echo $PATH and copy the result. It will look this /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local but probably even longer
-	4.	In Keyboard Maestro, open Settings → Variables and use the plus button to create a variable called ENV_PATH and paste in the PATH you just copied. This step is required for Keyboard Maestro to know where ocrmypdf is installed
-	5.	We need to verify that Keyboard Maestro has full disk access since it will be writing a file. Open System Settings → Privacy &amp; Security → Full Disk Access. If you don’t see Keyboard Maestro in the list, hit the plus button at the bottom, add Keyboard Maestro, and toggle it on.
-	6.	By default, Keyboard Maestro disables downloaded macros on import as a security precaution. Right-click on this macro and select “Enable macro”
-	7.	Create a new folder and give it any name you like, and in the far right pane change “Do not display in menu bar” to “Display in menu bar”
-	8.	Drag this macro into the new folder
-	9.	If you already have a folder of macros set to “Display in menu bar” you can use that one instead of creating a new one.</string>
+1. If you don’t already have it, install Homebrew:
+	Go to https://brew.sh
+	copy the command they tell you to copy using the little copy button. 
+	Open Terminal and hit Enter. Ignore the glop that flies by on your screen
+
+2. Install OCRmyPDF: 
+	In Terminal type:
+		brew install ocrmypdf
+	Ignore the even more voluminous pile of glop that will fly by on your screen
+3. Quit Terminal</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.AddFinderComments</string>
@@ -294,12 +294,10 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:683.000000</string>
+				<string>301.500000:697.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -512,7 +510,7 @@ export PATH=/opt/homebrew/bin:$PATH
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:1355.000000</string>
+				<string>301.500000:879.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -522,14 +520,14 @@ export PATH=/opt/homebrew/bin:$PATH
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0B2EB6B7-0E17-489B-A65E-7275E7A7E39F</key>
+		<key>09E3DA84-0929-49D9-B55B-BEBD50BBDDB0</key>
 		<dict>
 			<key>from</key>
 			<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F - 777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
 			<key>to</key>
 			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
 		</dict>
-		<key>1AA3B721-A47F-422D-B8B1-B2C7FC3425F2</key>
+		<key>1424BD6E-6C6C-46C1-AA64-2337E7D2EECC</key>
 		<dict>
 			<key>from</key>
 			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
