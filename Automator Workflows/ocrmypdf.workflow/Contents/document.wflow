@@ -147,7 +147,7 @@ If you'd prefer to force the OCR which rasterizes all vector content and then ru
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:403.000000</string>
+				<string>377.000000:403.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -217,7 +217,7 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 				<key>ActionParameters</key>
 				<dict>
 					<key>shouldAppend</key>
-					<true/>
+					<false/>
 					<key>textToAdd</key>
 					<string>*** REQUIREMENTS &amp; SETUP ***
 This macro requires the open source library ocrmypdf installed by Homebrew.
@@ -297,7 +297,130 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:697.000000</string>
+				<string>377.000000:705.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>shouldAppend</key>
+					<dict/>
+					<key>textToAdd</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Set Spotlight Comments for Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>shouldAppend</key>
+					<false/>
+					<key>textToAdd</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.AddFinderComments</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMAddFinderCommentsAction</string>
+				<key>InputUUID</key>
+				<string>12013334-EDBE-4F55-964A-E80E9C083D7B</string>
+				<key>Keywords</key>
+				<array>
+					<string>Add</string>
+					<string>Comment</string>
+					<string>File</string>
+					<string>Folder</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>5406C97F-B5FA-4437-BD3B-092926B9F1E5</string>
+				<key>UUID</key>
+				<string>E76EE419-BCB0-47DE-B0E3-02D708934F99</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<true/>
+						<key>name</key>
+						<string>shouldAppend</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>textToAdd</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>377.000000:844.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -357,21 +480,19 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 
 # A small script designed to take an input file of a PDF, run it through the library ocrmypdf, and send the resulting OCR'd file to the same name with the extension "-OCR.pdf" on the end
 
-# now=$(date +"%T")
-# echo "$now" &gt; ~/Desktop/error.log
-# echo "$now" &gt;&gt; ~/Desktop/debug.log
-# echo "$1" &gt; ~/Desktop/debug.log
-
 # assign a variable name to the input file including extension and path
-
 inputName="$1"
 # echo "inputName is $inputName" &gt;&gt; ~/Desktop/debug.log
 
-# assign a variable to the path where my homebrew apps live
+# Assign a variable to the path where homebrew apps live
+# if Apple Silicon it should be /opt/homebrew/bin
+# if Intel it should be /usr/loca/bin
 
-homebrewPath=/opt/homebrew/bin
-
-# put the path into a variable
+if [[ $(uname -p) == 'arm' ]];
+	then homebrewPath=/opt/homebrew/bin
+else
+	homebrewPath=/usr/local/bin
+fi
 
 dirName=$(dirname "$inputName")
 # echo "dirName is $dirName" &gt;&gt; ~/Desktop/debug.log
@@ -397,7 +518,7 @@ osascript -e 'display dialog "If this is a large file it may take a while ðŸ•°ï¸
 export PATH=/opt/homebrew/bin:$PATH
 
 # Run ocrmypdf on the original input file name, if it finds OCR redo it, set the output to pdf and save to the new inputName with -OG and .pdf
-/opt/homebrew/bin/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</string>
+$homebrewPath/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -510,9 +631,132 @@ export PATH=/opt/homebrew/bin:$PATH
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:879.000000</string>
+				<string>377.000000:1668.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>shouldAppend</key>
+					<dict/>
+					<key>textToAdd</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Set Spotlight Comments for Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>shouldAppend</key>
+					<false/>
+					<key>textToAdd</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.AddFinderComments</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMAddFinderCommentsAction</string>
+				<key>InputUUID</key>
+				<string>7F62E59F-D59A-4114-B296-F695173E6530</string>
+				<key>Keywords</key>
+				<array>
+					<string>Add</string>
+					<string>Comment</string>
+					<string>File</string>
+					<string>Folder</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>1D7B4976-3700-4BA4-B33F-CB7B4469C556</string>
+				<key>UUID</key>
+				<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+					<string>Spotlight</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<true/>
+						<key>name</key>
+						<string>shouldAppend</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>textToAdd</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>377.000000:1807.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<integer>1</integer>
@@ -609,12 +853,10 @@ export PATH=/opt/homebrew/bin:$PATH
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:1116.000000</string>
+				<string>377.000000:2044.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -679,7 +921,7 @@ done</string>
 					<key>inputMethod</key>
 					<integer>1</integer>
 					<key>shell</key>
-					<string>/bin/zsh</string>
+					<string>/bin/bash</string>
 					<key>source</key>
 					<string></string>
 				</dict>
@@ -783,12 +1025,10 @@ done</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>301.500000:1298.000000</string>
+				<string>377.000000:2226.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -798,41 +1038,64 @@ done</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>3A8EB332-CB9E-40F0-BC74-241A75064847</key>
-		<dict>
-			<key>from</key>
-			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
-			<key>to</key>
-			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
-		</dict>
-		<key>520175A8-3C8D-4C5F-94C6-DCEDE9ADF2CA</key>
+		<key>5B42CF29-929A-4139-9822-4529557D6A7B</key>
 		<dict>
 			<key>from</key>
 			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
 			<key>to</key>
-			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
+			<string>E76EE419-BCB0-47DE-B0E3-02D708934F99 - E76EE419-BCB0-47DE-B0E3-02D708934F99</string>
 		</dict>
-		<key>60816592-A054-4F48-B61D-4FE433C1D176</key>
+		<key>736FA784-BF55-4A63-96D0-39D327136A17</key>
 		<dict>
 			<key>from</key>
-			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
+			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
 			<key>to</key>
-			<string>DC9CE131-2F03-40C2-B9E2-8A4BEA793484 - DC9CE131-2F03-40C2-B9E2-8A4BEA793484</string>
+			<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02 - C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
 		</dict>
-		<key>BBACFB91-C563-497F-886C-C5E3B1CD3C1D</key>
+		<key>7EBC18ED-26D0-4ED7-8771-54EEC01FD2F1</key>
+		<dict>
+			<key>from</key>
+			<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02 - C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
+			<key>to</key>
+			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
+		</dict>
+		<key>99E7CA68-7472-4F88-AD40-41813007BD9E</key>
 		<dict>
 			<key>from</key>
 			<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F - 777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
 			<key>to</key>
 			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
 		</dict>
+		<key>BC4551CF-09F9-4AA8-9A4E-4BAC042CC9B7</key>
+		<dict>
+			<key>from</key>
+			<string>E76EE419-BCB0-47DE-B0E3-02D708934F99 - E76EE419-BCB0-47DE-B0E3-02D708934F99</string>
+			<key>to</key>
+			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
+		</dict>
+		<key>F2379836-9B56-491B-98A1-6D4B7E4635B6</key>
+		<dict>
+			<key>from</key>
+			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
+			<key>to</key>
+			<string>DC9CE131-2F03-40C2-B9E2-8A4BEA793484 - DC9CE131-2F03-40C2-B9E2-8A4BEA793484</string>
+		</dict>
 	</dict>
 	<key>workflowMetaData</key>
 	<dict>
+		<key>applicationBundleID</key>
+		<string>com.apple.finder</string>
 		<key>applicationBundleIDsByPath</key>
-		<dict/>
+		<dict>
+			<key>/System/Library/CoreServices/Finder.app</key>
+			<string>com.apple.finder</string>
+		</dict>
+		<key>applicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>applicationPaths</key>
-		<array/>
+		<array>
+			<string>/System/Library/CoreServices/Finder.app</string>
+		</array>
 		<key>backgroundColor</key>
 		<data>
 		YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
@@ -928,6 +1191,10 @@ done</string>
 		<integer>15</integer>
 		<key>processesInput</key>
 		<false/>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
 		<string>com.apple.Automator.fileSystemObject.PDF</string>
 		<key>serviceOutputTypeIdentifier</key>
