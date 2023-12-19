@@ -297,7 +297,7 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:705.000000</string>
+				<string>377.000000:697.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -415,12 +415,10 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:844.000000</string>
+				<string>377.000000:836.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -484,14 +482,15 @@ This macro requires the open source library ocrmypdf installed by Homebrew.
 inputName="$1"
 # echo "inputName is $inputName" &gt;&gt; ~/Desktop/debug.log
 
-# Assign a variable to the path where homebrew apps live
+# Export PATH so script knows where ocrmypdf and depedencies (such as Tesseract) are located
 # if Apple Silicon it should be /opt/homebrew/bin
 # if Intel it should be /usr/loca/bin
 
 if [[ $(uname -p) == 'arm' ]];
-	then homebrewPath=/opt/homebrew/bin
-else
-	homebrewPath=/usr/local/bin
+	then
+		export PATH=/opt/homebrew/bin:$PATH
+	else
+		export PATH=/usr/local/bin:$PATH
 fi
 
 dirName=$(dirname "$inputName")
@@ -506,7 +505,7 @@ inputBaseName=$(basename "$inputName" .pdf)
 add="-OCR.pdf"
 # echo "add is $add" &gt;&gt; ~/Desktop/debug.log
 
-# Create a variable for the output file name that concatenates the base name of the input and adds -0CR and the file extension .pdf
+# Create a variable for the output file name that concatenates the base name of the input and adds -OCR and the file extension .pdf
 
 outputName="${dirName}/${inputBaseName}${add}"
 # echo "outputName is $outputName" &gt;&gt; ~/Desktop/debug.log
@@ -514,11 +513,10 @@ outputName="${dirName}/${inputBaseName}${add}"
 # Send a dialog box to the user to tell them it's working
 osascript -e 'display dialog "If this is a large file it may take a while 🕰️"'
 
-# Required for Automator to know where ocrmypdf's dependencies are, such as tesseract
-export PATH=/opt/homebrew/bin:$PATH
-
-# Run ocrmypdf on the original input file name, if it finds OCR redo it, set the output to pdf and save to the new inputName with -OG and .pdf
-$homebrewPath/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</string>
+# Run ocrmypdf on the original input file name
+# if it finds OCR redo it, set the output to pdf and 
+# save to the new inputName with -OG and .pdf
+ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -631,7 +629,7 @@ $homebrewPath/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:1668.000000</string>
+				<string>377.000000:1503.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -749,12 +747,10 @@ $homebrewPath/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:1807.000000</string>
+				<string>377.000000:1642.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Spotlight Comments for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -856,7 +852,7 @@ $homebrewPath/ocrmypdf --redo-ocr --output-type pdf "$inputName" "$outputName"</
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:2044.000000</string>
+				<string>377.000000:1879.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1028,7 +1024,7 @@ done</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>377.000000:2226.000000</string>
+				<string>377.000000:2061.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1038,47 +1034,47 @@ done</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>5B42CF29-929A-4139-9822-4529557D6A7B</key>
+		<key>03A278F9-C516-4D84-A45B-AF74A96E91F4</key>
 		<dict>
 			<key>from</key>
 			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
 			<key>to</key>
 			<string>E76EE419-BCB0-47DE-B0E3-02D708934F99 - E76EE419-BCB0-47DE-B0E3-02D708934F99</string>
 		</dict>
-		<key>736FA784-BF55-4A63-96D0-39D327136A17</key>
+		<key>2A00C505-79FD-40B1-9230-A09325B1FCC0</key>
 		<dict>
 			<key>from</key>
 			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
 			<key>to</key>
 			<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02 - C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
 		</dict>
-		<key>7EBC18ED-26D0-4ED7-8771-54EEC01FD2F1</key>
-		<dict>
-			<key>from</key>
-			<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02 - C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
-			<key>to</key>
-			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
-		</dict>
-		<key>99E7CA68-7472-4F88-AD40-41813007BD9E</key>
-		<dict>
-			<key>from</key>
-			<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F - 777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
-			<key>to</key>
-			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
-		</dict>
-		<key>BC4551CF-09F9-4AA8-9A4E-4BAC042CC9B7</key>
+		<key>47BC0778-FACD-4404-840E-FE7F50190295</key>
 		<dict>
 			<key>from</key>
 			<string>E76EE419-BCB0-47DE-B0E3-02D708934F99 - E76EE419-BCB0-47DE-B0E3-02D708934F99</string>
 			<key>to</key>
 			<string>3FD5EB19-6F01-44DA-9E23-3512D9D011E4 - 3FD5EB19-6F01-44DA-9E23-3512D9D011E4</string>
 		</dict>
-		<key>F2379836-9B56-491B-98A1-6D4B7E4635B6</key>
+		<key>4F4505F7-0793-4389-B418-D048B76B8EB6</key>
 		<dict>
 			<key>from</key>
 			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
 			<key>to</key>
 			<string>DC9CE131-2F03-40C2-B9E2-8A4BEA793484 - DC9CE131-2F03-40C2-B9E2-8A4BEA793484</string>
+		</dict>
+		<key>707DEE99-B424-49B5-BDD6-3642FE0F7B43</key>
+		<dict>
+			<key>from</key>
+			<string>C68FB0F3-D9B5-4977-8A83-02E48F649A02 - C68FB0F3-D9B5-4977-8A83-02E48F649A02</string>
+			<key>to</key>
+			<string>6EFFC6E4-DC73-4F4F-9731-E6527101FB9D - 6EFFC6E4-DC73-4F4F-9731-E6527101FB9D</string>
+		</dict>
+		<key>8980F8F4-065F-4D02-A751-F962DAB56E01</key>
+		<dict>
+			<key>from</key>
+			<string>777ABB52-64AF-4EFD-BB54-BF1056585C7F - 777ABB52-64AF-4EFD-BB54-BF1056585C7F</string>
+			<key>to</key>
+			<string>E1720D99-E438-412A-A18A-D88A38E84C6D - E1720D99-E438-412A-A18A-D88A38E84C6D</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
