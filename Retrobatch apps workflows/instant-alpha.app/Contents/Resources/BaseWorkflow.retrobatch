@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>previewBackgroundColorState</key>
+	<integer>0</integer>
+	<key>processes</key>
+	<array>
+		<dict>
+			<key>canvasOrigin</key>
+			<string>{80, 80}</string>
+			<key>class</key>
+			<string>OTFilesNode</string>
+			<key>outputsIds</key>
+			<array>
+				<string>2095b945-b411-4de8-a445-2457d6810ba1</string>
+			</array>
+			<key>proccessId</key>
+			<string>28ca594c-6772-4a81-a7c2-30ab6e080557</string>
+			<key>urls</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>canvasOrigin</key>
+			<string>{240, 80}</string>
+			<key>class</key>
+			<string>OTInstantAlphaNode</string>
+			<key>inputColorFromLocation</key>
+			<integer>0</integer>
+			<key>inputContiguous</key>
+			<true/>
+			<key>inputSmoothEdges</key>
+			<true/>
+			<key>inputTolerance</key>
+			<real>0.0</real>
+			<key>outputsIds</key>
+			<array>
+				<string>85f47b51-2200-4f9d-bbb4-e18fd410ed36</string>
+			</array>
+			<key>proccessId</key>
+			<string>2095b945-b411-4de8-a445-2457d6810ba1</string>
+		</dict>
+		<dict>
+			<key>canvasOrigin</key>
+			<string>{400, 80}</string>
+			<key>class</key>
+			<string>OTWriteNode</string>
+			<key>inputFileNameTokens</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0FycmF5AISECE5TT2Jq
+			ZWN0AIWEAWkEkoSEhBFPVFRva2VuRmllbGRUb2tlbgCUkoSEhAhO
+			U1N0cmluZwGUhAErEiRTb3VyY2VGb2xkZXJQYXRoJIaGkoSWkoSY
+			mAMkLySGhpKElpKEmJgKJEZpbGVOYW1lJIaGkoSYmA4taW5zdGFu
+			dC1hbHBoYYaG
+			</data>
+			<key>inputLossyCompressionQuality</key>
+			<real>0.5</real>
+			<key>inputOpenFolderOnFinish</key>
+			<true/>
+			<key>inputOverwriteExistingFiles</key>
+			<false/>
+			<key>inputProgressive</key>
+			<false/>
+			<key>inputRemoveAlphaChannelIfOpaque</key>
+			<true/>
+			<key>inputTIFFCompressionAlgorithm</key>
+			<integer>5</integer>
+			<key>outputUTI</key>
+			<string>public.png</string>
+			<key>outputsIds</key>
+			<array>
+				<string>c9af5363-8fb3-4b94-9e16-50cb0f1f81c1</string>
+			</array>
+			<key>proccessId</key>
+			<string>85f47b51-2200-4f9d-bbb4-e18fd410ed36</string>
+		</dict>
+		<dict>
+			<key>canvasOrigin</key>
+			<string>{560, 80}</string>
+			<key>class</key>
+			<string>OTAutoJSQuitRetrobatch</string>
+			<key>outputsIds</key>
+			<array/>
+			<key>proccessId</key>
+			<string>c9af5363-8fb3-4b94-9e16-50cb0f1f81c1</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<integer>0</integer>
+</dict>
+</plist>
