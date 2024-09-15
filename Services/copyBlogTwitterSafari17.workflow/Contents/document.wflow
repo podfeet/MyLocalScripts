@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>-- Script should strip the Personal Profile name and following emdash from the front of the URL title created with Safari 17s Profiles feature-- Would be an improvement if I could have it pull off whichever Profile name it finds.-- This version is for posting to Mastodon, Twitter, etc.-- Another tell application "Safari"	set theURL to URL of front document	set theTitle to name of front document	set inputText to theTitle	log inputTextend tell-- Define the input text and the text to trim from the front and backset trimFromFront to "Personal — "set trimFromBack to " - Podfeet Podcasts"-- Trim the text from the frontif inputText starts with trimFromFront then	set inputText to text ((count trimFromFront) + 1) through -1 of inputTextend if-- Trim the text from the backif inputText ends with trimFromBack then	set inputText to text 1 through -((count trimFromBack) + 1) of inputTextend ifset cleanTitle to inputText-- Display the resulting text for diagnostics-- display dialog cleanTitle &amp; " " &amp; theURLset the clipboard to cleanTitle &amp; " " &amp; theURL</string>
+					<string>-- Script should strip the Personal Profile name and following emdash from the front of the URL title created with Safari 17s Profiles feature-- Would be an improvement if I could have it pull off whichever Profile name it finds.-- This version is for posting to Mastodon, Twitter, etc.-- Another tell application "Safari"	set theURL to URL of front document	set theTitle to name of front document	set inputText to theTitle	log inputTextend tell-- Define the input text and the text to trim from the front and backset trimFromFront to "Personal — "set trimFromBack to " - Podfeet Podcasts"-- Trim the text from the frontif inputText starts with trimFromFront then	set inputText to text ((count trimFromFront) + 1) through -1 of inputTextend if-- Trim the text from the backif inputText ends with trimFromBack then	set inputText to text 1 through -((count trimFromBack) + 1) of inputTextend ifset cleanTitle to inputText-- Display the resulting text for diagnostics-- display dialog cleanTitle &amp; " " &amp; theURLset the clipboard to cleanTitle &amp; return &amp; theURL</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>384.500000:368.000000</string>
+				<string>453.000000:797.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
