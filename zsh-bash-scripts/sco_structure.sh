@@ -3,6 +3,7 @@
 # New ScreenCastsONLINE Project Folders
 # Version: 1.0
 # Created by Allison Sheridan
+# Based on idea of Mike Burke at Macstock
 # Last Updated 2025-07-27
 # License: MIT
 # Copyright © 2025 Allison
@@ -33,7 +34,7 @@
 # =============================================================================
 
 # Set the app name
-APP_NAME=$(osascript -e 'text returned of (display dialog "Enter the app name:" default answer "")')
+APP_NAME=$(osascript -e 'text returned of (display dialog "Enter the app name & I will create SCO folders for you:" default answer "deleteme")')
 
 # Check if user confirmed the correct app name
 if osascript -e 'display dialog "You entered: '"$APP_NAME"'" buttons {"Cancel", "Confirm"} default button "Confirm"' > /dev/null 2>&1; then
@@ -68,6 +69,6 @@ if osascript -e 'display dialog "You entered: '"$APP_NAME"'" buttons {"Cancel", 
 	osascript -e 'display dialog "You have created a folder called '$APP_NAME' in Dropbox and on the SCO volume, and both folders are in the Finder sidebar. Additionally, an assets folder has been created in Dropbox only."'
 else
     # User clicked Cancel - show message and exit
-    osascript -e 'display dialog "Ok, I won'\''t make these folders" buttons {"OK"} default button "OK"'
+    osascript -e 'display dialog "Ok, I won'\''t make the folders" buttons {"OK"} default button "OK"'
     exit 0
 fi
