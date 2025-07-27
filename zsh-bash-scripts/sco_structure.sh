@@ -34,34 +34,40 @@
 
 # Set the app name
 APP_NAME=$(osascript -e 'text returned of (display dialog "Enter the app name:" default answer "")')
-button_pressed=$(osascript -e 'button returned of (display dialog "You entered: '"$APP_NAME"'" buttons {"Cancel", "Confirm"} default button "Confirm")')
 
-# Create a new project directory in Dropbox for the app
-DROPBOX_DIR="$HOME/Library/CloudStorage/Dropbox/SCO Video/SCO Video DROPBOX/SCO Working Show DROPBOX"
-APP_DIR_DB=$DROPBOX_DIR/$APP_NAME" DROPBOX"
-mkdir $APP_DIR_DB
-# Create subdirectory for assets
-mkdir $APP_DIR_DB/assets
-
-# Add Dropbox project dir to Finder sidebar
-# Note: you may get a popup from macOS asking for Terminal to have access
-#       to System Events and to go to 
-#       System Settings/Privacy & Security/Accessibility/
-#       and toggle on Terminal
-open "$APP_DIR_DB"
-osascript -e 'tell application "Finder" to activate' -e 'tell application "System Events" to keystroke "t" using {command down, control down}'
-osascript -e 'tell application "Finder" to close (first window whose target is folder POSIX file "'"$APP_DIR_DB"'")'
-
-# Add project to ScreenCastsONLINE volume
-SCO_DIR="/Volumes/ScreenCastsONLINE/SCO Working Show"
-APP_DIR_SCO=$SCO_DIR/$APP_NAME" LOCAL"
-mkdir $APP_DIR_SCO 
-open "$APP_DIR_SCO"
-osascript -e 'tell application "Finder" to activate' -e 'tell application "System Events" to keystroke "t" using {command down, control down}'
-folder_name=$(basename "$APP_DIR_SCO")
-# osascript -e 'tell application "Finder" to close (first window whose name is "'"$APP_DIR_SCO"'")'
-
-# Confirm completion of all tasks
-osascript -e ' "You entered: '$APP_NAME'"'
-osascript -e 'display dialog "You have created a folder called '$APP_NAME' in Dropbox and on the SCO volume, and both folders are in the Finder sidebar. Additionally, an assets folder has been created in Dropbox only."'
-
+# Check if user confirmed the correct app name
+if osascript -e 'display dialog "You entered: '"$APP_NAME"'" buttons {"Cancel", "Confirm"} default button "Confirm"' > /dev/null 2>&1; then
+	# User clicked Confirm - continue with the script
+	# Create a new project directory in Dropbox for the app
+	DROPBOX_DIR="$HOME/Library/CloudStorage/Dropbox/SCO Video/SCO Video DROPBOX/SCO Working Show DROPBOX"
+	APP_DIR_DB=$DROPBOX_DIR/$APP_NAME" DROPBOX"
+	mkdir $APP_DIR_DB
+	# Create subdirectory for assets
+	mkdir $APP_DIR_DB/assets
+	
+	# Add Dropbox project dir to Finder sidebar
+	# Note: you may get a popup from macOS asking for Terminal to have access
+	#       to System Events and to go to 
+	#       System Settings/Privacy & Security/Accessibility/
+	#       and toggle on Terminal
+	open "$APP_DIR_DB"
+	osascript -e 'tell application "Finder" to activate' -e 'tell application "System Events" to keystroke "t" using {command down, control down}'
+	osascript -e 'tell application "Finder" to close (first window whose target is folder POSIX file "'"$APP_DIR_DB"'")'
+	
+	# Add project to ScreenCastsONLINE volume
+	SCO_DIR="/Volumes/ScreenCastsONLINE/SCO Working Show"
+	APP_DIR_SCO=$SCO_DIR/$APP_NAME" LOCAL"
+	mkdir $APP_DIR_SCO 
+	open "$APP_DIR_SCO"
+	osascript -e 'tell application "Finder" to activate' -e 'tell application "System Events" to keystroke "t" using {command down, control down}'
+	folder_name=$(basename "$APP_DIR_SCO")
+	# osascript -e 'tell application "Finder" to close (first window whose name is "'"$APP_DIR_SCO"'")'
+	
+	# Confirm completion of all tasks
+	osascript -e ' "You entered: '$APP_NAME'"'
+	osascript -e 'display dialog "You have created a folder called '$APP_NAME' in Dropbox and on the SCO volume, and both folders are in the Finder sidebar. Additionally, an assets folder has been created in Dropbox only."'
+else
+    # User clicked Cancel - show message and exit
+    osascript -e 'display dialog "Ok, I won'\''t make these folders" buttons {"OK"} default button "OK"'
+    exit 0
+fi
