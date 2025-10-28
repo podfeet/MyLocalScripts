@@ -1,3 +1,11 @@
+#!/bin/zsh
+
+# -c means send to Clipboard
+# -i allows interactive to switch between window and area capture
+# -o means don't capture a shadow
+
+screencapture -cio
+
 # Purpose: Read an image from macOS clipboard, apply 54px rounded corners + 2px gray border,
 #          then replace the clipboard contents with the processed PNG (with real transparent corners).
 # Tools: ImageMagick v7 (`magick`) and `pngpaste` (Homebrew), plus AppleScript to set PNG data only.
@@ -18,7 +26,7 @@ W=$(magick identify -format "%w" "$in_png")
 H=$(magick identify -format "%h" "$in_png")
 
 # Desired corner radius in pixels.
-r=54
+r=$(osascript -e 'button returned of (display dialog "Choose corner radius:" buttons {"52", "32"} default button "52")')
 
 # Build an opaque/transparent mask the same size as the image:
 # - Start all black (fully transparent).
