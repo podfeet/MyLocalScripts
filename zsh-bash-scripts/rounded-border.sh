@@ -1,3 +1,11 @@
+#!/bin/zsh
+
+# -c means send to Clipboard
+# -i allows interactive to switch between window and area capture
+# -o means don't capture a shadow
+
+screencapture -cio
+
 # Purpose: Read an image from macOS clipboard, apply 54px rounded corners + 2px gray border,
 #          then replace the clipboard contents with the processed PNG (with real transparent corners).
 # Tools: ImageMagick v7 (`magick`) and `pngpaste` (Homebrew), plus AppleScript to set PNG data only.
@@ -15,7 +23,9 @@ pngpaste "$in_png" >/dev/null 2>&1 || exit 1
 # Query the image width and height using ImageMagick identify.
 # These are needed to size the mask and to compute the rounded-rectangle coordinates.
 W=$(magick identify -format "%w" "$in_png")
-H=$(magick identify -format "%h" "$in_png")
+H=$(magick identify -format "%h" "$in_pngExecuteExecute Shell Script
+ Shell Script
+")
 
 # Desired corner radius in pixels.
 r=54
