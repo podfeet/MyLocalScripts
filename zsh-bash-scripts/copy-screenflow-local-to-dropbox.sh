@@ -1,3 +1,12 @@
+# ScreenFlow does not work well when saving to local storage
+# This script is to be referenced inside Hazel
+# Process is:
+	# Create two folders: "app-name" LOCAL and "app-name DROPBOX"
+	# Set Hazel to watch the new Dropbox folder and run this script
+	# record, and save to local folder. 
+	# Upon save, Hazel will copy the file from Local to Dropbox
+	# and append the name with the current date and time
+
 # Get the directory and current name of the file
 dir=$(dirname "$1")
 current=$(basename "$1")
