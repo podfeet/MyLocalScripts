@@ -28,7 +28,7 @@ H=$(magick identify -format "%h" "$in_pngExecuteExecute Shell Script
 ")
 
 # Desired corner radius in pixels.
-r=54
+r=$(osascript -e 'button returned of (display dialog "Choose corner radius:" buttons {"52", "32"} default button "52")')
 
 # Build an opaque/transparent mask the same size as the image:
 # - Start all black (fully transparent).
