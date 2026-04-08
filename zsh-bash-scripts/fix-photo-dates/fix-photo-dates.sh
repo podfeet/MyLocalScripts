@@ -3,6 +3,7 @@
 # ─── Prompt for date ─────────────────────────────────────────────────────────
 while true; do
   read -rp "Enter date (YYYY:MM:DD): " raw_date
+  read -rp "Enter name for all files: " raw_title
   if [[ "$raw_date" =~ ^[0-9]{4}:[0-9]{2}:[0-9]{2}$ ]]; then
     break
   else
@@ -52,7 +53,7 @@ for original in "${image_files[@]}"; do
   ext="${original##*.}"
   ext_lower="$(echo "$ext" | tr '[:upper:]' '[:lower:]')"
   counter=$(printf "%0${pad_width}d" "$index")
-  new_name="${counter} Fresno Photoshoot ${LABEL_DATE}.${ext_lower}"
+  new_name="${counter} ${raw_title} ${LABEL_DATE}.${ext_lower}"
 
   # Rename
   mv -- "$original" "$new_name"
