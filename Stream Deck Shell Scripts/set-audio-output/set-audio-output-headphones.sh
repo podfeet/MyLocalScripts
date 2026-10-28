@@ -8,7 +8,11 @@
 #     scripts without Homebrew on the PATH.
 #   - It retries for a few seconds, because right after a device is plugged
 #     or unplugged macOS can take a moment to settle its device list.
-#   - It checks the result instead of assuming it worked.
+#   - It checks SwitchAudioSource's exit status instead of assuming it worked.
+#
+# Why it's fast: right after any switch, coreaudiod gets busy for ~10 seconds
+# and every audio command run during that time stalls. So the output switch
+# happens FIRST, and nothing else asks CoreAudio questions afterward.
 #
 # Requires: brew install switchaudio-osx
 
@@ -23,15 +27,12 @@ if [[ ! -x "$SAS" ]]; then
 fi
 
 for attempt in {1..10}; do
-    # Only try to switch once the Wave XLR actually shows up in the list
-    if "$SAS" -a -t output | grep -Fxq "$TARGET"; then
-        "$SAS" -t output -s "$TARGET" >/dev/null 2>&1
-        # Also send alert sounds to the headphones so beeps follow along
+    # Switch output first so the sound moves right away. This fails (exit 1)
+    # if the device isn't in the list yet, so we wait and try again.
+    if "$SAS" -t output -s "$TARGET" >/dev/null 2>&1; then
+        # Also send alert sounds to the same device so beeps follow along
         "$SAS" -t system -s "$TARGET" >/dev/null 2>&1
-
-        if [[ "$("$SAS" -c -t output)" == "$TARGET" ]]; then
-            exit 0
-        fi
+        exit 0
     fi
     sleep 0.5
 done
